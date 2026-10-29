@@ -19,6 +19,10 @@ This script answers those questions in one run.
 
 ## What the report contains
 
+![Sample report](docs/sample-report.png)
+
+*Preview built from fictitious data. Download the matching Excel file: [`examples/sample_audit.xlsx`](examples/sample_audit.xlsx).*
+
 | Sheet | Content |
 |---|---|
 | `Summary` | Totals: spaces, global/personal, archived, empty, inactive, pages |
@@ -76,6 +80,10 @@ PYTHONPATH=. python -m pytest -q
 ```
 
 The tests use fake API responses: no Atlassian site or credentials needed.
+
+## Changelog
+
+See [Releases](https://github.com/GhntSergio/confluence-space-audit/releases).
 
 ## Security
 

@@ -181,6 +181,10 @@ def build_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def export_excel(df: pd.DataFrame, output: str) -> None:
+    df = df.copy()
+    for col in ("page_count", "days_since_update", "permission_entries", "group_count"):
+        if col in df:
+            df[col] = df[col].astype("Int64")  # keep integers even when some values are missing
     with pd.ExcelWriter(output, engine="openpyxl") as writer:
         build_summary(df).to_excel(writer, sheet_name="Summary", index=False)
         df.to_excel(writer, sheet_name="Spaces", index=False)
